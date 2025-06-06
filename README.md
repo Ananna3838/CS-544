@@ -66,7 +66,7 @@ sudo apt install python3
 ### 3. Build and Run (Linux/macOS/WSL)
 This project is implemented in Python 3.8+ and uses asyncio and standard libraries only. A Makefile is provided for automation on Linux-based systems.
 
-Option A: Using Makefile 
+Option A: Using Makefile
 Use the provided Makefile to automate server and client execution:
 ```bash
 # Start the server
@@ -75,7 +75,7 @@ make run-server
 # In a separate terminal, start the client
 make run-client
 ```
-Option B: Manual Execution
+Option B: Manual Execution.
 Start the server manually:
 ```bash
 python3 server.py --port 8888

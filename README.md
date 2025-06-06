@@ -35,12 +35,15 @@ The server implements a strict FSM:
 - `INIT_WAIT` → `AUTH_WAIT` → `CHAT_READY` → `IN_CHAT` → `CLOSING` → `CLOSED`
 Only valid transitions are allowed. Invalid messages in any state lead to session termination.
 
-## 🚀 Usage Instructions
+## Usage Instructions
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/quic_chat.git
 cd quic_chat
 
 **### 2. Prerequisites**
+Ensure Python 3.8 or higher is installed:
+```bash
+python3 --version
 
 This project is implemented in Python 3.8+ and uses asyncio and standard libraries only. A Makefile is provided for automation on Linux-based systems.

@@ -40,10 +40,26 @@ Only valid transitions are allowed. Invalid messages in any state lead to sessio
 ```bash
 git clone https://github.com/yourusername/quic_chat.git
 cd quic_chat
-
+```
 ### 2. Prerequisites
 Ensure Python 3.8 or higher is installed:
 ```bash
 python3 --version
-
+```
+If Python is not installed, run:
+```bash
+sudo apt update
+sudo apt install python3
+```
+### 3. Build and Run (Linux/macOS/WSL)
 This project is implemented in Python 3.8+ and uses asyncio and standard libraries only. A Makefile is provided for automation on Linux-based systems.
+Option A: Using Makefile 
+Use the provided Makefile to automate server and client execution:
+```bash
+# Start the server
+make run-server
+
+# In a separate terminal, start the client
+make run-client
+```
+

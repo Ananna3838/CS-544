@@ -41,7 +41,7 @@ Only valid transitions are allowed. Invalid messages in any state lead to sessio
 git clone https://github.com/yourusername/quic_chat.git
 cd quic_chat
 
-**### 2. Prerequisites**
+### 2. Prerequisites
 Ensure Python 3.8 or higher is installed:
 ```bash
 python3 --version

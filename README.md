@@ -40,7 +40,6 @@ Only valid transitions are allowed. Invalid messages in any state lead to sessio
 README.md              # Project documentation
 
 Source Codes/
-└── quic_chat/
     ├── client.py      # QUIC chat client
     ├── server.py      # QUIC chat server
     ├── protocol.py    # Message types and header (pack/unpack)

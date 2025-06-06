@@ -35,6 +35,18 @@ The server implements a strict FSM:
 - `INIT_WAIT` → `AUTH_WAIT` → `CHAT_READY` → `IN_CHAT` → `CLOSING` → `CLOSED`
 Only valid transitions are allowed. Invalid messages in any state lead to session termination.
 
+## File Structure
+```bash
+quic_chat/
+│
+├── client.py          # QUIC chat client
+├── server.py          # QUIC chat server
+├── protocol.py        # Message types and header (pack/unpack)
+├── state.py           # State machine definition
+├── Makefile           # Automation for build/run
+└── README.md          # Project documentation
+```
+
 ## Usage Instructions
 ### 1. Clone the repository
 ```bash
@@ -53,6 +65,7 @@ sudo apt install python3
 ```
 ### 3. Build and Run (Linux/macOS/WSL)
 This project is implemented in Python 3.8+ and uses asyncio and standard libraries only. A Makefile is provided for automation on Linux-based systems.
+
 Option A: Using Makefile 
 Use the provided Makefile to automate server and client execution:
 ```bash
@@ -62,4 +75,38 @@ make run-server
 # In a separate terminal, start the client
 make run-client
 ```
+Option B: Manual Execution
+Start the server manually:
+```bash
+python3 server.py --port 8888
+```
+Then run the client:
+```bash
+python3 client.py --ip 127.0.0.1 --port 8888
+```
 
+##  Example Output
+### Server Terminal
+```bash
+[Server] Server started on port 8888.
+[Server] New client connected.
+[Server] INIT received.
+[Server] AUTH: username=stanny, password=admin
+[Server] Auth OK.
+[Server] Joined room: room1
+[Server] Chat message: Hello QUIC Server!
+[Server] Closing connection.
+[Server] Connection closed.
+```
+### Client Terminal
+```bash
+[Client] Connecting to server at 127.0.0.1:8888...
+[Client] Sending INIT...
+[Client] Sending AUTH...
+[Client] Waiting for AUTH_ACK...
+[Client] Authentication successful.
+[Client] Sending JOIN...
+[Client] Sending CHAT...
+[Client] Sending CLOSE...
+[Client] Connection closed.
+```

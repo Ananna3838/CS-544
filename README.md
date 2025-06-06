@@ -37,17 +37,15 @@ Only valid transitions are allowed. Invalid messages in any state lead to sessio
 
 ## File Structure
 ```bash
-README.md          # Project documentation
-Source Codes/
-│
-quic_chat/
-│
-├── client.py          # QUIC chat client
-├── server.py          # QUIC chat server
-├── protocol.py        # Message types and header (pack/unpack)
-├── state.py           # State machine definition
-└──  Makefile           # Automation for build/run
+README.md              # Project documentation
 
+Source Codes/
+└── quic_chat/
+    ├── client.py      # QUIC chat client
+    ├── server.py      # QUIC chat server
+    ├── protocol.py    # Message types and header (pack/unpack)
+    ├── state.py       # State machine definition
+    └── Makefile       # Automation for build/run
 ```
 
 ## Usage Instructions

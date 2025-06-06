@@ -50,8 +50,8 @@ Source Codes/
 ## Usage Instructions
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/quic_chat.git
-cd quic_chat
+git clone https://github.com/Ananna3838/CS-544.git
+cd "CS-544/Source Codes"
 ```
 ### 2. Prerequisites
 Ensure Python 3.8 or higher is installed:

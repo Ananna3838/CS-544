@@ -28,6 +28,19 @@ This project implements a **stateful application-layer protocol** over QUIC-like
 Each message header is 12 bytes, with the structure:
 
 | version | msg_type | flags | reserved | session_id (4B) | payload_len (4B) |
+Structured using `!BBBBII` (network byte order, 12 bytes total).
 
+### Finite State Machine (FSM)
+The server implements a strict FSM:
+- `INIT_WAIT` → `AUTH_WAIT` → `CHAT_READY` → `IN_CHAT` → `CLOSING` → `CLOSED`
+Only valid transitions are allowed. Invalid messages in any state lead to session termination.
 
+## 🚀 Usage Instructions
+### 1. Clone the repository
+```bash
+git clone https://github.com/yourusername/quic_chat.git
+cd quic_chat
 
+**### 2. Prerequisites**
+
+This project is implemented in Python 3.8+ and uses asyncio and standard libraries only. A Makefile is provided for automation on Linux-based systems.
